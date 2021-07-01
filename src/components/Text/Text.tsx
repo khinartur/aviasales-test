@@ -1,19 +1,12 @@
-import React from "react";
+import React from 'react';
 import classnames from 'classnames';
-import styles from "@/components/Text/Text.scss";
+import styles from '@/components/Text/Text.scss';
 
-type TextMode =
-  | 'primary'
-  | 'secondary'
-  | 'contrast';
+type TextMode = 'primary' | 'secondary' | 'contrast';
 
-type TextSize =
-  | 'h3'
-  | 'h4'
-  | 'base'
-  | 'small';
+type TextSize = 'h3' | 'h4' | 'base' | 'small';
 
-const TAG_BY_SIZE: {[K in TextSize]: string} = {
+const TAG_BY_SIZE: { [K in TextSize]: string } = {
   h3: 'h3',
   h4: 'p',
   base: 'p',
@@ -46,9 +39,5 @@ export const Text: React.FC<TextProps> = ({
     text = text.toUpperCase();
   }
 
-  return React.createElement(
-    TAG_BY_SIZE[size],
-    {className},
-    text,
-  );
+  return React.createElement(TAG_BY_SIZE[size], { className }, text);
 };

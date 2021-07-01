@@ -1,31 +1,42 @@
 {
-  "name": "my-market",
+  "name": "aviasales-test-tast",
   "version": "1.0.0",
-  "description": "React + Redux pet project",
+  "description": "Aviasales test task project (React + TS)",
   "scripts": {
     "build-dev": "webpack",
     "build-prod": "NODE_ENV=production webpack",
     "start": "webpack serve --hot",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "eslint": "eslint \"src/**/*.{ts,tsx}\"",
+    "eslint:fix": "npm run eslint -- --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint"
+    ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/khinartur/my-market.git"
+    "url": "git+https://github.com/khinartur/aviasales-test.git"
   },
   "keywords": [
-    "online",
-    "market",
-    "pet",
+    "aviasales",
+    "test",
     "project",
     "react",
-    "redux"
+    "typescript"
   ],
   "author": "Arthur Khineltsev khineltsev@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/khinartur/my-market/issues"
+    "url": "https://github.com/khinartur/aviasales-test/issues"
   },
-  "homepage": "https://github.com/khinartur/my-market#readme",
+  "homepage": "https://github.com/khinartur/aviasales-test#readme",
   "dependencies": {
     "classnames": "^2.3.1",
     "core-js": "^3.15.1",
@@ -43,12 +54,20 @@
     "@storybook/react": "^6.3.1",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^3.6.0",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.0.0",
     "node-sass": "^6.0.1",
     "postcss-loader": "^4.3.0",
+    "prettier": "2.2.1",
     "sass-loader": "^12.1.0",
     "style-loader": "^1.3.0",
     "terser-webpack-plugin": "^5.1.4",

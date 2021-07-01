@@ -1,6 +1,6 @@
-import React, {useState} from "react";
-import {storiesOf} from '@storybook/react';
-import {Checkbox} from "@/components/Checkbox/Checkbox";
+import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
+import { Checkbox } from '@/components/Checkbox/Checkbox';
 
 const stories = storiesOf('Чекбокс', module);
 

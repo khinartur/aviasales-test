@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button} from "@/components/Button/Button";
 
-ReactDOM.render(<Button>React + Redux pet project</Button>, document.getElementById('root'));
+ReactDOM.render(
+  <div>React + Redux pet project</div>,
+  document.getElementById('root'),
+);

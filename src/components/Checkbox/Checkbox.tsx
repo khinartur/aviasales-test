@@ -1,8 +1,8 @@
-import React from "react";
-import classnames from "classnames";
-import styles from "@/components/Checkbox/Checkbox.scss";
-import {Text} from "@/components/Text/Text";
-import statusDoneIcon from "@/static/icons/statusDone.svg";
+import React from 'react';
+import classnames from 'classnames';
+import styles from '@/components/Checkbox/Checkbox.scss';
+import { Text } from '@/components/Text/Text';
+import statusDoneIcon from '@/static/icons/statusDone.svg';
 
 interface CheckboxProps {
   label: string;
@@ -36,12 +36,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         value={value}
         onChange={onChange}
       />
-      <div className={boxClass}>
-        {checked && <img src={statusDoneIcon}/>}
-      </div>
-      <Text>
-        {label}
-      </Text>
+      <div className={boxClass}>{checked && <img src={statusDoneIcon} />}</div>
+      <Text>{label}</Text>
     </label>
   );
 };
