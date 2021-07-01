@@ -21,8 +21,17 @@ const rules = [
     exclude: /node_modules/,
   },
   {
-    test: /\.css$/,
-    use: ['style-loader', 'css-loader'],
+    test: /\.(css|scss)$/,
+    use: [
+      'style-loader',
+      {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+        },
+      },
+      'sass-loader'
+    ],
   },
   {
     test: /\.(?:ico|gif|png|jpg|jpeg)$/i,

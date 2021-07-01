@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'semantic-ui-css/semantic.min.css';
+import {Button} from "@/components/Button/Button";
 
-ReactDOM.render(<div>React + Redux pet project</div>, document.getElementById('root'));
+ReactDOM.render(<Button>React + Redux pet project</Button>, document.getElementById('root'));

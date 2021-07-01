@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+.label {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.label:hover {
+  background-color: $color-checkbox-hover;
+}
+
+.input {
+  display: none;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $color-checkbox-default;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+.boxChecked {
+  border-color: $color-primary;
+}
