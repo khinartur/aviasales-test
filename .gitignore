@@ -2,4 +2,5 @@
 .vscode/
 node_modules/
 public/
+src/stories/
 package-lock.json
