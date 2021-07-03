@@ -1,19 +1,19 @@
 @import "../../styles/variables";
 
-.h3 {
-  font-size: $font-size-h3;
-}
-
-.h4 {
-  font-size: $font-size-h4;
-}
-
 .base {
   font-family: $font;
   font-size: $font-size-base;
   font-weight: 400;
   line-height: 20px;
   margin: 0;
+}
+
+.h3 {
+  font-size: $font-size-h3;
+}
+
+.h4 {
+  font-size: $font-size-h4;
 }
 
 .small {

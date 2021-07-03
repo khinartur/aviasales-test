@@ -1,0 +1,8 @@
+.segment {
+  display: flex;
+  justify-content: space-between;
+}
+
+.segment:not(:last-child) {
+  margin-bottom: 10px;
+}

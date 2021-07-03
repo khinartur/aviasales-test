@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+.wrapper {
+  display: flex;
+  user-select: none;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 0 auto;
+  height: 50px;
+  border: 1px solid $color-tab-border;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.tab:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.tab:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.tabActive {
+  background-color: $color-primary;
+}
