@@ -4,4 +4,8 @@ import { Button } from '@/components/Button/Button';
 
 const stories = storiesOf('Кнопка', module);
 
-stories.add('Primary', () => <Button>Показать еще 5 билетов!</Button>);
+const noop = () => console.log('button click');
+
+stories.add('Primary', () => (
+  <Button onClick={noop}>Показать еще 5 билетов!</Button>
+));
