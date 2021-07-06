@@ -30,7 +30,7 @@ const rules = [
           modules: true,
         },
       },
-      'sass-loader'
+      'sass-loader',
     ],
   },
   {
@@ -50,17 +50,20 @@ const resolve = {
   },
 };
 
-const optimization = mode === 'development' ? {} : {
-  minimize: true,
-  minimizer: [
-    new TerserPlugin({
-      parallel: true,
-      terserOptions: {
-        ecma: 6,
-      },
-    }),
-  ],
-};
+const optimization =
+  mode === 'development'
+    ? {}
+    : {
+        minimize: true,
+        minimizer: [
+          new TerserPlugin({
+            parallel: true,
+            terserOptions: {
+              ecma: 6,
+            },
+          }),
+        ],
+      };
 
 const plugins = [
   new HtmlWebpackPlugin({
