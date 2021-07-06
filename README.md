@@ -1,6 +1,10 @@
 # Aviasales test task project
 React + TS + Redux
 
+## Visit
+
+https://aviasales-test-task.vercel.app/
+
 ## Запуск
 
 ```
@@ -23,6 +27,7 @@ npm storybook
 ## TO-DO
 
 🔳 Process API errors\
+🔳 Optimal ticket type algorithm\
 🔳 Performance review with needed optimizations\
 🔳 Unit and UI tests\
 🔳 Stylelint
