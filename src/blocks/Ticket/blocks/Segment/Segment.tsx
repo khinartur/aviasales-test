@@ -34,10 +34,16 @@ export const Segment: React.FC<SegmentProps> = ({ segment }) => {
         caption="В пути"
         content={DateHelper.beautifyHoursAndMinutesFromMinutes(duration)}
       />
-      <Info
-        caption={`${stopsCount} ${pluralize(stopsCount, TRANSFERS_PLURAL_MAP)}`}
-        content={stops.join(',')}
-      />
+      {stopsCount > 0 && (
+        <Info
+          caption={`${stopsCount} ${pluralize(
+            stopsCount,
+            TRANSFERS_PLURAL_MAP,
+          )}`}
+          content={stops.join(', ')}
+        />
+      )}
+      {stopsCount === 0 && <Info caption="Прямой рейс" content="" />}
     </div>
   );
 };

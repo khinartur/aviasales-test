@@ -1,13 +1,13 @@
 import React from 'react';
-import styles from '@/components/Price/Price.scss';
+import styles from '@/components/Info/Info.scss';
 import { Text } from '@/components/Text/Text';
 
 interface InfoProps {
   caption: string;
-  content: string;
+  content?: string;
 }
 
-export const Info: React.FC<InfoProps> = ({ caption, content }) => {
+export const Info: React.FC<InfoProps> = ({ caption, content = '' }) => {
   return (
     <div className={styles.wrapper}>
       <Text mode="secondary" size="small" uppercase bold>
