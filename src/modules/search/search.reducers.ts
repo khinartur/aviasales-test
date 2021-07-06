@@ -1,7 +1,7 @@
 import { combineReducers, Reducer } from 'redux';
 import { ESearchActions } from '@/modules/search/search.constants';
 
-const searchId: Reducer<string | null> = (state = null, action) => {
+const searchId: Reducer<Nullable<string>> = (state = null, action) => {
   switch (action.type) {
     case ESearchActions.SET_SEARCH_ID: {
       return action.payload;

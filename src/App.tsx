@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from '@/App.scss';
-import { applyMiddleware, createStore, Store, AnyAction } from 'redux';
+import { applyMiddleware, createStore, Store } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import { AppStore, rootReducer } from '@/reducer';
+import { rootReducer } from '@/reducer';
 import { rootSaga } from '@/sagas';
 import { initTicketsSearch } from '@/modules/search/search.actions';
 import { Image } from '@/components/Image/Image';
@@ -13,18 +13,15 @@ import logoIcon from '@/static/icons/logo.svg';
 import { TicketsList } from '@/blocks/TicketsList/TicketsList';
 
 export class App extends React.Component {
-  // private readonly store: AppStore;
-  private readonly store: Store<any, AnyAction>;
+  private readonly store: Store;
 
   constructor(props: Record<string, unknown>) {
     super(props);
 
     const sagaMiddleware = createSagaMiddleware();
-    // @ts-ignore
     this.store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
     sagaMiddleware.run(rootSaga);
 
-    // @ts-ignore
     this.store.dispatch(initTicketsSearch());
   }
 

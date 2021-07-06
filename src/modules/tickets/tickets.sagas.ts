@@ -1,18 +1,20 @@
 import { call, select, put } from 'redux-saga/effects';
-import { tickets, TicketsResponseClient } from '@/api/endpoints/tickets';
+import {
+  tickets,
+  TicketsRequestParams,
+  TicketsResponseClient,
+} from '@/api/endpoints/tickets';
 import { selectSearchId } from '@/modules/search/search.selectors';
 import { getTicketsBunchSuccess } from '@/modules/tickets/tickets.actions';
+import { ApiResponse } from '@/api';
 
-export function* getTicketsBunch() {
-  // @ts-ignore
+export function* getTicketsBunch(): Generator {
   const searchId = yield select(selectSearchId);
-  // @ts-ignore
-  const ticketsResponse = yield call(tickets, { searchId });
-
-  // if ('error' in searchResponse) {
-  //   yield put(searchError());
-  //   return;
-  // }
+  const ticketsResponse = yield call<
+    (
+      params: TicketsRequestParams,
+    ) => Promise<ApiResponse<TicketsResponseClient>>
+  >(tickets, { searchId: searchId as string });
 
   const { tickets: responseTickets } = ticketsResponse as TicketsResponseClient;
   yield put(getTicketsBunchSuccess(responseTickets));

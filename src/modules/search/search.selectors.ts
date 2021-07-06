@@ -1,3 +1,4 @@
 import { AppStore } from '@/reducer';
 
-export const selectSearchId = (state: AppStore) => state.searchReducer.searchId;
+export const selectSearchId = (state: AppStore): Nullable<string> =>
+  state.searchReducer.searchId;

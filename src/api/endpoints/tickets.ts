@@ -6,7 +6,7 @@ export interface TicketsResponseClient {
   stop: boolean;
 }
 
-interface TicketsRequestParams {
+export interface TicketsRequestParams {
   searchId: string;
 }
 

@@ -9,4 +9,4 @@ export const rootReducer = combineReducers({
   ticketsReducer,
 });
 
-export interface AppStore extends ReturnType<typeof rootReducer> {}
+export type AppStore = ReturnType<typeof rootReducer>;
